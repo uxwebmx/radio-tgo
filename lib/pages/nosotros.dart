@@ -11,7 +11,7 @@ class Acerca extends StatelessWidget {
         title: const Text('Acerca de'),
       ),
       body: const WebView(
-        initialUrl: 'https://radio.tlaltenangoenred.com/acerca-de/',
+        initialUrl: 'https://www.tlaltenangoenred.com/acerca-de/',
         javascriptMode: JavascriptMode.unrestricted,
       ),
     );

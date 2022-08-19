@@ -80,19 +80,6 @@ class MenuListTileWidget extends StatelessWidget {
           },
         ),
         ListTile(
-          leading: const Icon(Icons.chat_bubble),
-          title: const Text('Chatroom'),
-          onTap: () {
-            Navigator.pop(context);
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const WebSite(),
-              ),
-            );
-          },
-        ),
-        ListTile(
           leading: const Icon(Icons.mic_none_rounded),
           title: const Text('Entrevistas y Transmisiones'),
           onTap: () {
@@ -114,6 +101,19 @@ class MenuListTileWidget extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => const Podcast1(),
+              ),
+            );
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.chat_bubble),
+          title: const Text('Chatroom'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const WebSite(),
               ),
             );
           },

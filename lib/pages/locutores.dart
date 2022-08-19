@@ -220,6 +220,20 @@ rowLocutor1() {
           size: 40,
         ),
       ),
+      IconButton(
+        onPressed: () async {
+          final Uri urL = Uri.parse('https://wa.me/521');
+          await launchUrl(
+            urL,
+            mode: LaunchMode.externalApplication,
+          );
+        },
+        icon: const Icon(
+          Icons.whatsapp,
+          color: Colors.green,
+          size: 40,
+        ),
+      ),
     ],
   );
 }
@@ -240,6 +254,20 @@ rowLocutor2() {
         icon: const Icon(
           Icons.facebook,
           color: Colors.blue,
+          size: 40,
+        ),
+      ),
+      IconButton(
+        onPressed: () async {
+          final Uri urL = Uri.parse('https://wa.me/17738226857');
+          await launchUrl(
+            urL,
+            mode: LaunchMode.externalApplication,
+          );
+        },
+        icon: const Icon(
+          Icons.whatsapp,
+          color: Colors.green,
           size: 40,
         ),
       ),
@@ -303,6 +331,20 @@ rowLocutor4() {
           size: 40,
         ),
       ),
+      IconButton(
+        onPressed: () async {
+          final Uri urL = Uri.parse('https://wa.me/5214374790112');
+          await launchUrl(
+            urL,
+            mode: LaunchMode.externalApplication,
+          );
+        },
+        icon: const Icon(
+          Icons.whatsapp,
+          color: Colors.green,
+          size: 40,
+        ),
+      ),
     ],
   );
 }
@@ -323,6 +365,20 @@ rowLocutor5() {
         icon: const Icon(
           Icons.facebook,
           color: Colors.blue,
+          size: 40,
+        ),
+      ),
+      IconButton(
+        onPressed: () async {
+          final Uri urL = Uri.parse('https://wa.me/521');
+          await launchUrl(
+            urL,
+            mode: LaunchMode.externalApplication,
+          );
+        },
+        icon: const Icon(
+          Icons.whatsapp,
+          color: Colors.green,
           size: 40,
         ),
       ),
