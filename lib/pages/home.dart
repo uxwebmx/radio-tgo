@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:flutter_radio_player/flutter_radio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:tlaltenangoenred/pages/my_drawer.dart';
@@ -11,11 +10,10 @@ class Home extends StatefulWidget {
   final playerState = FlutterRadioPlayer.flutter_radio_paused;
 
   @override
-  _HomeState createState() => _HomeState();
+  HomeState createState() => HomeState();
 }
 
-class _HomeState extends State<Home> {
-  
+class HomeState extends State<Home> {
   final FlutterRadioPlayer _flutterRadioPlayer = FlutterRadioPlayer();
 
   @override
@@ -25,16 +23,12 @@ class _HomeState extends State<Home> {
   }
 
   Future<void> initRadioService() async {
-    try {
-      await _flutterRadioPlayer.init(
-        "Flutter Radio Example",
-        "Live",
-        "https://stream.zenolive.com/wmt2bd5eh1duv.mp3",
-        "true",
-      );
-    } on PlatformException {
-      print("Exception occurred while trying to register the services.");
-    }
+    await _flutterRadioPlayer.init(
+      "Tlaltenangoenred Radio",
+      "Live",
+      "https://stream.zenolive.com/wmt2bd5eh1duv.mp3",
+      "true",
+    );
   }
 
   @override
@@ -44,7 +38,7 @@ class _HomeState extends State<Home> {
         title: const Text('Tlaltenangoenred'),
         actions: <Widget>[
           IconButton(
-            icon:  const Icon(Icons.wallet_giftcard_sharp),
+            icon: const Icon(Icons.wallet_giftcard_sharp),
             onPressed: () {},
           ),
           IconButton(
@@ -53,8 +47,8 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      drawer:  const MyDrawer(),
-      body:  const WebView(
+      drawer: const MyDrawer(),
+      body: const WebView(
         initialUrl: 'https://www.tlaltenangoenred.com/',
         javascriptMode: JavascriptMode.unrestricted,
       ),
@@ -67,7 +61,7 @@ class _HomeState extends State<Home> {
           child: const Icon(Icons.play_arrow)),
       bottomNavigationBar: BottomAppBar(
         //hasnotch: true,
-        color:  const Color(0xffFFfffF),
+        color: const Color(0xffFFfffF),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
@@ -80,7 +74,7 @@ class _HomeState extends State<Home> {
                   mode: LaunchMode.externalNonBrowserApplication,
                 );
               },
-              icon:  const Icon(
+              icon: const Icon(
                 Icons.facebook,
                 color: Colors.blue,
               ),
@@ -94,15 +88,14 @@ class _HomeState extends State<Home> {
                   mode: LaunchMode.inAppWebView,
                 );
               },
-              icon:  const Icon(
+              icon: const Icon(
                 Icons.video_library_sharp,
                 color: Colors.red,
               ),
             ),
             IconButton(
               onPressed: () async {
-                final Uri urL =
-                    Uri.parse('https://m.me/tlaltenangoenred');
+                final Uri urL = Uri.parse('https://m.me/tlaltenangoenred');
                 await launchUrl(
                   urL,
                   mode: LaunchMode.externalApplication,

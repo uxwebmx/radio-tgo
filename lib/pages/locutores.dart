@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:tlaltenangoenred/pages/my_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:tlaltenangoenred/pages/home.dart';
 
 class Locutores extends StatefulWidget {
-  const Locutores({Key? key}) : super(key: key);
+  const Locutores({super.key});
 
   @override
-  _LocutoresState createState() => _LocutoresState();
+  LocutoresState createState() => LocutoresState();
 }
 
-class _LocutoresState extends State<Locutores> {
+class LocutoresState extends State<Locutores> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,22 +28,21 @@ class _LocutoresState extends State<Locutores> {
       ),
       drawer: const MyDrawer(),
       body: _buildBody1(),
-    bottomNavigationBar: BottomAppBar(
+      bottomNavigationBar: BottomAppBar(
         //hasnotch: true,
-        color:  const Color(0xffFFfffF),
+        color: const Color(0xffFFfffF),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             IconButton(
               onPressed: () async {
-                final Uri urL =
-                    Uri.parse('fb://page/tlaltenangoenred');
+                final Uri urL = Uri.parse('fb://page/tlaltenangoenred');
                 await launchUrl(
                   urL,
                   mode: LaunchMode.externalApplication,
                 );
               },
-              icon:  const Icon(
+              icon: const Icon(
                 Icons.facebook,
                 color: Colors.blue,
               ),
@@ -58,15 +56,14 @@ class _LocutoresState extends State<Locutores> {
                   mode: LaunchMode.inAppWebView,
                 );
               },
-              icon:  const Icon(
+              icon: const Icon(
                 Icons.video_library_sharp,
                 color: Colors.red,
               ),
             ),
             IconButton(
               onPressed: () async {
-                final Uri urL =
-                    Uri.parse('https://m.me/tlaltenangoenred');
+                final Uri urL = Uri.parse('https://m.me/tlaltenangoenred');
                 await launchUrl(
                   urL,
                   mode: LaunchMode.externalApplication,
